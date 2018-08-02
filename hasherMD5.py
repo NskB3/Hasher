@@ -21,7 +21,7 @@ def brute():
         print("""
 Charsets:
 1. Alpha (Lowercase letters)
-2. Alpha Numeric (Lower &Uppercas letter with numbers)
+2. Alpha Numeric (Lower & Uppercase letter with numbers)
 3. Numeric (Numbers only)
 4. Full (Lower & Uppercase letters, Numbers, Special characters)
 5. Custom
