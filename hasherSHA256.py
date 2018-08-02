@@ -18,7 +18,32 @@ def dictionary():
             sys.stdout.write("\rTesting " + guess)
             sys.stdout.flush()
 def brute():
-    charset = input("Charset: ")
+    print("""
+Charsets:
+1. Alpha (Lowercase letters)
+2. Alpha Numeric (Lower &Uppercas letter with numbers)
+3. Numeric (Numbers only)
+4. Full (Lower & Uppercase letters, Numbers, Special characters)
+5. Custom
+""")
+    CHARSET_NUMERIC = "0123456789"
+    CHARSET_ALPHA = "abcdefghijklmnopqrstuvwxyz."
+    CHARSET_ALPHANUMERIC = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    CHARSET_FULL = """ !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"""
+    option = input(">> ")
+    if option == "1":
+        charset = CHARSET_ALPHA
+    elif option == "2":
+        charset = CHARSET_ALPHANUMERIC
+    elif option == "3":
+        charset = CHARSET_NUMERIC
+    elif option == "4":
+        charset = CHARSET_FULL
+    elif option == "5":
+        charset = input("Charset> ")
+    else:
+        print("Not a valid option. Setting charset to Alpha Numeric")
+        charset = CHARSET_ALPHANUMERIC
     for length in range(1, 9999):
         gen = itertools.product(charset, repeat=length)
         for i in gen:
