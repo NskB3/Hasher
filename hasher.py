@@ -41,7 +41,7 @@ def brute():
                  frstt = frst.replace('(', '')
                  frsttt = frstt.replace(')', '')
                  tested.append(frsttt)
-                 sys.stdout.write("\rTested %s Passwords" % str(len(tested)))
+                 sys.stdout.write("\rTested %s Combinations" % str(len(tested)))
                  sys.stdout.flush()
 
 
