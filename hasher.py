@@ -34,7 +34,7 @@ def brute():
                  frst = ''.join(i).replace(',', '')
                  frstt = frst.replace('(', '')
                  frsttt = frstt.replace(')', '')
-                 print("Hash Cracked:",frsttt)
+                 print("\nHash Cracked:",frsttt)
                  quit()
                 else:
                  frst = ''.join(i).replace(',', '')
