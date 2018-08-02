@@ -2,14 +2,7 @@ import hashlib
 import itertools
 import sys
 
-hash = input("Hash to crack: ").replace(' ', 
-'')
-tested = []
-def printit():
-    global say
-    global le
-    le = len(tested)           
-    say = print('Tested',len(tested))
+hash = input("Hash to crack: ").replace(' ', '')
 def dictionary():
         wlist = input("Wordlist: ")
         try:
@@ -22,7 +15,8 @@ def dictionary():
             if newhash == hash:
                 print("\nHash Cracked:",guess)
             else:
-                print("\nTried: " + str(guess))
+                sys.stdout.write("\rTesting " + guess)
+                sys.stdout.flush()
 def brute():
         charset = input("Charset: ")
         for length in range(1, 9999):
@@ -41,10 +35,10 @@ def brute():
                  frstt = frst.replace('(', '')
                  frsttt = frstt.replace(')', '')
                  tested.append(frsttt)
-                 sys.stdout.write("\rTested %s Combinations" % str(len(tested)))
+                 sys.stdout.write("\rTested %s " % frsttt
                  sys.stdout.flush()
 
-
+                                                           
 print("""
 1. Dictionary Attack
 2. Bruteforce
